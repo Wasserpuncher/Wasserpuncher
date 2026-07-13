@@ -1,17 +1,28 @@
-![repo](https://github.com/Wasserpuncher/Wasserpuncher/assets/70776301/41651981-94d0-42bd-ac36-2db216960ad9)
-![license-MIT-blue](https://github.com/Wasserpuncher/Wasserpuncher/assets/70776301/d3d9444c-24fd-428a-bc90-d9a75450b010)
+# Kai Pfister
 
+Ich baue Dinge from scratch, um zu verstehen, wie sie wirklich funktionieren.
+Kein Framework, keine Dependencies — nur die Standardbibliothek und das Problem.
 
+### Was ich zuletzt gebaut habe
 
+**[tinyjit](https://github.com/Wasserpuncher/tinyjit)** — Ein JIT-Compiler in reinem Python, der echten x86-64-Maschinencode in ausführbaren Speicher schreibt und ihn aufruft. Kein gcc, kein LLVM. `55` ist `push rbp` — die CPU führt das direkt aus.
 
+**[rejit](https://github.com/Wasserpuncher/rejit)** — Eine Regex-Engine mit garantiert linearer Laufzeit (Pike VM), damit immun gegen ReDoS. `(a+)+$` läuft in 0,18 ms, wo Pythons `re` 34 Sekunden braucht. Gegen `re` über 90 000 Zufallsfälle verifiziert.
 
+**[nanoclone](https://github.com/Wasserpuncher/nanoclone)** — `git clone`, selbst implementiert: Smart HTTP v2, Packfile-Delta-Auflösung, echter `.git`-Index. Das Ergebnis besteht `git fsck --strict`.
 
+---
+
+Python · Netzwerke · Compiler · Low-Level · Würzburg
+
+<details>
+<summary>ASCII</summary>
+
+<br>
 
 ![github-cat](https://github.com/Wasserpuncher/Wasserpuncher/assets/70776301/f92d8a20-f430-4b32-bb66-a69e1ff86254)
 
-
 ![programming-computer](https://github.com/Wasserpuncher/Wasserpuncher/assets/70776301/1fefed58-f43b-46b2-8bb5-004c01fbf311)
-
 
 ![code-coding](https://github.com/Wasserpuncher/Wasserpuncher/assets/70776301/648fb23c-13d3-4456-8ca2-5009b5fcf20d)
 ![212257472-08e52665-c503-4bd9-aa20-f5a4dae769b5](https://github.com/Wasserpuncher/Wasserpuncher/assets/70776301/9c67826c-c03d-449e-8f1b-f35952ffee9c)
@@ -22,8 +33,7 @@
 ![235294006-04e22871-2943-4626-9a99-e1d416cbda26](https://github.com/Wasserpuncher/Wasserpuncher/assets/70776301/82bae6bf-0db2-47d6-8e47-0d5e20f41b2e)
 ![235294007-de441046-823e-4eff-89bf-d4df52858b65](https://github.com/Wasserpuncher/Wasserpuncher/assets/70776301/c4dc1b64-b05e-4e26-8f28-53e88ef2cc71)
 
-
-
+```
 ████████████████████████████████████████████████████████████  ██╗  ██╗███████╗██╗     ██╗      ██████╗
 ████████████████████████████████████████████████████████████  ██║  ██║██╔════╝██║     ██║     ██╔═══██╗
 ███████████████████████████████████`.        ╙██████████████  ███████║█████╗  ██║     ██║     ██║   ██║
@@ -44,12 +54,9 @@
 █████████▌ º     ╤╣▒╣╩^",▄▄███▀  ▒▒╣"     ''''''' ▀▀     `██  ██║╚██╔╝██║██╔══╝  ██╔══╝     ██║       ╚██╔╝  ██║   ██║██║   ██║
 █████████  ▌       ▄▄████████─         ---------    L'▒▒▒ ██  ██║ ╚═╝ ██║███████╗███████╗   ██║        ██║   ╚██████╔╝╚██████╔╝
 ▀▀▀▀▀▀▀▀▀▀▀▀▀-     ▀▀▀▀▀▀▀▀▀▀       '╧╧╧╧╧╧╧╧╧`     ╚ ╧╧╧- ▀  ╚═╝     ╚═╝╚══════╝╚══════╝   ╚═╝        ╚═╝    ╚═════╝  ╚═════╝
-
-
-
+```
 
 ![241765440-80728820-e06b-4f96-9c9e-9df46f0cc0a5](https://github.com/Wasserpuncher/Wasserpuncher/assets/70776301/1658bffa-91a9-4f40-a3fd-7ed495faf806)
-
 
 ![242390524-0c7eb6ed-663b-4ce4-bfbd-18239a38ba1b](https://github.com/Wasserpuncher/Wasserpuncher/assets/70776301/399e1a7b-d5b3-4d9c-9e20-0b4674ef68a3)
 
@@ -60,6 +67,6 @@
 ![221352968-ac6f7b24-ed9a-4d00-a045-710caa6fc834](https://github.com/Wasserpuncher/Wasserpuncher/assets/70776301/a953db9b-b00e-438a-97d2-a544128f51e6)
 ![238200426-29fd6286-4e7b-4d6c-818f-c4765d5e39a9](https://github.com/Wasserpuncher/Wasserpuncher/assets/70776301/4658810f-87e0-481e-88fb-32cb86ce4c35)
 
-
 ![212281763-e6ecd7ef-c4aa-45b6-a97c-f33f6bb592bd](https://github.com/Wasserpuncher/Wasserpuncher/assets/70776301/4b0f6a86-ea41-4309-a316-33e580b9f102)
 
+</details>
