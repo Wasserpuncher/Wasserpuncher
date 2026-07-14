@@ -1,0 +1,58 @@
+# The profile makes claims. This runs them.
+#
+# The number on the front page was wrong once -- it said Python's `re` took 34
+# seconds where it takes about 14, and it said the suite ran 90,000 cases where
+# CI runs 30,013. Nobody lied; somebody typed a number and never measured it
+# again. A person who "keeps the profile updated" is just that same somebody.
+# So the check is mechanical, and it runs whether anyone remembers it or not.
+
+name: the profile must still tell the truth
+
+on:
+  push:
+  pull_request:
+  # Nothing about this page changes on its own -- but rejit does, and the number
+  # here is measured over there. A weekly run catches the drift that no push to
+  # this repository would ever notice.
+  schedule:
+    - cron: "0 6 * * 1"          # Mondays, 06:00 UTC
+  workflow_dispatch:
+
+# This workflow reports. It does not rewrite the README and it does not push.
+# Read-only is not a precaution here, it is the point: the standard being
+# enforced is "checked before it goes public", and a machine that edited this
+# page unreviewed would be breaking exactly the rule it exists to keep.
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      # The numbers on the profile are measured in other repositories, so those
+      # repositories have to be present. Shallow: we need the code, not the past.
+      # `.cache/` is where the README's own directives expect to find them.
+      - name: Fetch the repositories the numbers come from
+        run: git clone --depth 1 https://github.com/Wasserpuncher/rejit .cache/rejit
+
+      # NOT `pip install readme-check`. That name belongs to an unrelated package
+      # on PyPI ("Used to check readme", v0.1.4) and installing it here would
+      # silently check nothing -- a green build that verifies not one claim, which
+      # is worse than no build at all. It is installed from source, by URL.
+      - name: Install readme-check
+        run: |
+          pip install git+https://github.com/Wasserpuncher/readme-check
+          pip install pytest
+
+      # Every number on the profile that was measured is bound, in the Markdown,
+      # to the command that measured it. This runs those commands and compares.
+      # If rejit's suite stops passing, its command prints no number, and this
+      # fails too -- which is correct: the sentence claims the checks pass.
+      - name: Every number on the profile must still be true
+        run: readme-check README.md --no-color
