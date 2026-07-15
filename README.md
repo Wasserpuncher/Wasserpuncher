@@ -20,10 +20,6 @@ That is not a slogan I picked. I audited the READMEs of my own repositories one 
 
 These belong together. **[The Claim Checkers](https://github.com/Wasserpuncher/the-claim-checkers)** collects them as one family with a single thesis: the gap between what something claims to be and what it is, made measurable, made a build failure.
 
-### The proof they were pointed at me first
-
-A tool that measures honesty is worth nothing until it has been run against its author. **[A record of my own lies](https://github.com/Wasserpuncher/a-record-of-my-own-lies)** is every false claim these tools turned up in my own repositories — the wrong number, the true value, and the real fix commit for each. It is the reason to trust the rest of this page.
-
 ### Built from scratch
 
 These came first, and they are why the tools above exist: they are the repositories whose READMEs turned out to be lying. No frameworks and no dependencies — the standard library and the problem.
