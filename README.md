@@ -46,6 +46,8 @@ These came first, and they are why the tools above exist: they are the repositor
 
 **[tar-from-scratch](https://github.com/Wasserpuncher/tar-from-scratch)** — The POSIX USTAR format built and parsed by hand, one 512-byte block at a time, no `tarfile`. The proof is external: the CI writes an archive with it, hands it to the system GNU `tar` to extract, and compares every byte back — both directions.
 
+**[json-from-scratch](https://github.com/Wasserpuncher/json-from-scratch)** — A recursive-descent JSON parser (RFC 8259), no `json` module. Measured against the corpus every JSON parser is measured against — Nicolas Seriot's official JSON Parsing Test Suite — in CI: 95/95 must-accept, 188/188 must-reject.
+
 Also from scratch: [btreedb](https://github.com/Wasserpuncher/btreedb) (an on-disk B+ tree), [tcp-userspace](https://github.com/Wasserpuncher/tcp-userspace) (a TCP/IP stack real `curl` talks to), [cdcl-sat](https://github.com/Wasserpuncher/cdcl-sat) (a SAT solver whose UNSAT answers ship a checkable proof), [minilink](https://github.com/Wasserpuncher/minilink) (a static ELF linker), [deflate-from-scratch](https://github.com/Wasserpuncher/deflate-from-scratch) and [recursive-dns](https://github.com/Wasserpuncher/recursive-dns) (DNS resolution from the root servers).
 
 ---
