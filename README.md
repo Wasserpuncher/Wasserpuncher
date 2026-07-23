@@ -20,6 +20,14 @@ That is not a slogan I picked. I audited the READMEs of my own repositories one 
 
 These belong together. **[The Claim Checkers](https://github.com/Wasserpuncher/the-claim-checkers)** collects them as one family with a single thesis: the gap between what something claims to be and what it is, made measurable, made a build failure.
 
+### Sites that check themselves in public
+
+The tools above run in CI, where only I see them. These are the same idea, deployed — a claim held to the truth in front of whoever visits.
+
+**[wetter.kaipfstr.de](https://wetter.kaipfstr.de)** — A weather site that shows its own errors instead of hiding them. Every other weather page prints one number; this one prints the **spread** — eleven forecast models asked the same question at the same minute, and the gap between their answers — and then **back-checks its own past forecasts against what the DWD station actually measured**. The five-day forecast that was seven degrees off is still on the page; most apps swap the old forecast for the new one and pretend they always knew. Keyless, no build step, no dependencies: the whole logic sits in three script files, and every number names the source it came from (Open-Meteo for the models, Bright Sky for the measurements, PEGELONLINE for river gauges, the DWD for warnings). Where a source is unreliable — a flood value read off the wrong grid cell, a station 2,000 m below your mountain — the page says so rather than rounding it away. Static on Netlify, MIT-licensed.
+
+**[tetris.kaipfister.de](https://tetris.kaipfister.de)** — The original Tetris in the browser, built to the 1989 Nintendo rules: Super Rotation System, wall kicks, lock delay, original scoring, local highscores. No install, no signup, no framework.
+
 ### Built from scratch
 
 These came first, and they are why the tools above exist: they are the repositories whose READMEs turned out to be lying. No frameworks and no dependencies — the standard library and the problem.
@@ -32,7 +40,9 @@ These came first, and they are why the tools above exist: they are the repositor
 
 **[nanoclone](https://github.com/Wasserpuncher/nanoclone)** — `git clone`, implemented: Smart HTTP v2, packfile delta resolution, a real `.git` index. Every object is verified against its own SHA-1, and real Git sees a clean checkout — `git status` prints nothing.
 
-Also from scratch: [btreedb](https://github.com/Wasserpuncher/btreedb) (an on-disk B+ tree), [tcp-userspace](https://github.com/Wasserpuncher/tcp-userspace) (a TCP/IP stack real `curl` talks to), [cdcl-sat](https://github.com/Wasserpuncher/cdcl-sat) (a SAT solver whose UNSAT answers ship a checkable proof), [minilink](https://github.com/Wasserpuncher/minilink) (a static ELF linker), [deflate-from-scratch](https://github.com/Wasserpuncher/deflate-from-scratch), [recursive-dns](https://github.com/Wasserpuncher/recursive-dns) and [pdb-from-scratch](https://github.com/Wasserpuncher/pdb-from-scratch).
+**[pdb-from-scratch](https://github.com/Wasserpuncher/pdb-from-scratch)** — A debugger in pure Python that sets breakpoints the way real debuggers do: by writing `0xCC` into another process's memory via `ptrace`. Verified end-to-end against a traced C program.
+
+Also from scratch: [btreedb](https://github.com/Wasserpuncher/btreedb) (an on-disk B+ tree), [tcp-userspace](https://github.com/Wasserpuncher/tcp-userspace) (a TCP/IP stack real `curl` talks to), [cdcl-sat](https://github.com/Wasserpuncher/cdcl-sat) (a SAT solver whose UNSAT answers ship a checkable proof), [minilink](https://github.com/Wasserpuncher/minilink) (a static ELF linker), [deflate-from-scratch](https://github.com/Wasserpuncher/deflate-from-scratch) and [recursive-dns](https://github.com/Wasserpuncher/recursive-dns) (DNS resolution from the root servers).
 
 ---
 
