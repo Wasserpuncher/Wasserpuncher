@@ -16,6 +16,8 @@ That is not a slogan I picked. I audited the READMEs of my own repositories one 
 
 **[impressum-check](https://github.com/Wasserpuncher/impressum-check)** — Fails the build when a site is missing a disclosure German law requires (§ 5 DDG, Art. 13 GDPR), and every rule cites the provision it enforces. *Deliberately German: it enforces German law, so its rules and its output speak it.*
 
+**[link-check](https://github.com/Wasserpuncher/link-check)** — A README says "sources below" and lists ten links; a dead one is the quietest kind of wrong. This pulls every `http(s)` URL out of Markdown or HTML, requests each, and fails the build on a dead one — example URLs in code fences skipped, `HEAD` falling back to `GET`. Standard library only, and its own CI runs it on its own README.
+
 **[Layer 8](https://layer8.kaipfstr.de)** — An encyclopedia of real computer, phone and network faults. Its build runs a set of linters over its own content and aborts when a claim is unbacked — a command that would not work, a fix nothing supports. It refuses to publish what it cannot stand behind. *Also deliberately German, because its readers are.*
 
 These belong together. **[The Claim Checkers](https://github.com/Wasserpuncher/the-claim-checkers)** collects them as one family with a single thesis: the gap between what something claims to be and what it is, made measurable, made a build failure.
