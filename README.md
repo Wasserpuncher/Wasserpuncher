@@ -34,6 +34,8 @@ The tools above run in CI, where only I see them. These are the same idea, deplo
 
 These came first, and they are why the tools above exist: they are the repositories whose READMEs turned out to be lying. No frameworks and no dependencies — the standard library and the problem.
 
+**[chess-perft](https://github.com/Wasserpuncher/chess-perft)** — A legal chess move generator in pure Python — castling through check, en passant with its discovered-check edge cases, promotions, pins. Its correctness is not an opinion: it reproduces the canonical published **perft** node counts to the last digit, up to 119,060,324 leaf nodes at depth 6 from the start position, across the six standard test positions.
+
 **[rejit](https://github.com/Wasserpuncher/rejit)** — A regular-expression engine (a Pike VM) that matches in guaranteed linear time, so it cannot be ReDoS'd. Against the classic catastrophic pattern `(a+)+$`, Python's `re` multiplies its work about sixteenfold for every four characters of input, while rejit's time does not move at all — that shape is the claim, not any one benchmark. Every CI run cross-checks it against `re` on ten thousand randomly generated pattern/text pairs, asking three questions of each — <!-- readme-check: 30013 = cd .cache/rejit && python -m pytest -q --color=no 2>&1 | grep -oE '[0-9]+ subtests' | grep -oE '[0-9]+' --> 30013 assertions, zero disagreements.
 
 **[tinyjit](https://github.com/Wasserpuncher/tinyjit)** — A JIT compiler in pure Python that writes real x86-64 machine code into executable memory and calls it. No gcc, no LLVM. `55` is `push rbp`, and the CPU runs it directly.
