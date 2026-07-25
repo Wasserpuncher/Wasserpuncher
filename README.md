@@ -54,6 +54,12 @@ These came first, and they are why the tools above exist: they are the repositor
 
 Also from scratch: [btreedb](https://github.com/Wasserpuncher/btreedb) (an on-disk B+ tree), [tcp-userspace](https://github.com/Wasserpuncher/tcp-userspace) (a TCP/IP stack real `curl` talks to), [cdcl-sat](https://github.com/Wasserpuncher/cdcl-sat) (a SAT solver whose UNSAT answers ship a checkable proof), [minilink](https://github.com/Wasserpuncher/minilink) (a static ELF linker), [deflate-from-scratch](https://github.com/Wasserpuncher/deflate-from-scratch), [recursive-dns](https://github.com/Wasserpuncher/recursive-dns) (DNS resolution from the root servers), [sha256-from-scratch](https://github.com/Wasserpuncher/sha256-from-scratch) (FIPS 180-4, proven against `hashlib`), [base64-from-scratch](https://github.com/Wasserpuncher/base64-from-scratch) (RFC 4648, checked against `/usr/bin/base64`), [crc32-from-scratch](https://github.com/Wasserpuncher/crc32-from-scratch) (proven against `zlib.crc32`), [bignum-from-scratch](https://github.com/Wasserpuncher/bignum-from-scratch) (arbitrary-precision integers, Karatsuba, proven against Python `int`), [csv-from-scratch](https://github.com/Wasserpuncher/csv-from-scratch) (RFC 4180, proven against the `csv` module), [zip-from-scratch](https://github.com/Wasserpuncher/zip-from-scratch) (archives read byte-identically by `unzip` and `zipfile`) and [utf8-from-scratch](https://github.com/Wasserpuncher/utf8-from-scratch) (strict encoder/decoder, proven against Python's UTF-8).
 
+### Algorithms & toys — each with its own check
+
+Because a claim should carry its proof even when the thing is small or just for fun.
+
+**[maze](https://github.com/Wasserpuncher/maze)** — a perfect-maze generator and solver whose output is proven to be a spanning tree of the grid (exactly *w·h − 1* passages, connected, acyclic), so there is exactly one path between any two cells. **[donut](https://github.com/Wasserpuncher/donut)** — the spinning ASCII torus, where every sampled point is proven to lie on the torus, `(√(x²+y²) − R₂)² + z² = R₁²`. **[bloom-filter](https://github.com/Wasserpuncher/bloom-filter)** — zero false negatives ever, and a measured false-positive rate that lands on the theoretical `(1 − e^{−kn/m})^k`. **[expr-eval](https://github.com/Wasserpuncher/expr-eval)** — a tokenizer / shunting-yard / RPN evaluator (no `eval`, no `ast`) matching Python's arithmetic on thousands of random expressions.
+
 ---
 
 Python · Compilers · Networks · Low-level · Würzburg
