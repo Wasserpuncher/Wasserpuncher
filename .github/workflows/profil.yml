@@ -56,3 +56,15 @@ jobs:
       # fails too -- which is correct: the sentence claims the checks pass.
       - name: Every number on the profile must still be true
         run: readme-check README.md --no-color
+
+      # And the check above has to be capable of failing. A workflow can pass
+      # by accident -- a pipe without pipefail, a `|| true`, a step marked
+      # continue-on-error -- and then this page would be "verified" by a job
+      # that cannot go red. ci-alibi runs the steps of this very file under
+      # GitHub's own shell and reports any that could not fail. Measured clean
+      # on 2026-07-26: 3 steps examined, none toothless.
+      - name: This workflow must be capable of failing
+        run: |
+          pip install git+https://github.com/Wasserpuncher/ci-alibi
+          ci-alibi .github/workflows
+        shell: bash
