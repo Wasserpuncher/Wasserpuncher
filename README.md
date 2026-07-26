@@ -30,6 +30,10 @@ That is not a slogan I picked. I audited the READMEs of my own repositories one 
 
 These belong together. **[The Claim Checkers](https://github.com/Wasserpuncher/the-claim-checkers)** collects them as one family with a single thesis: the gap between what something claims to be and what it is, made measurable, made a build failure.
 
+### What happens when you point one of them at everybody
+
+**[ci-alibi-field-report](https://github.com/Wasserpuncher/ci-alibi-field-report)** — ci-alibi run over the 100 most-starred repositories in each of Python, JavaScript, Go, Rust and Java that have workflows: **500 repositories, 4,652 workflow files**, the corpus frozen before the first measurement. It found 2,075 steps that cannot go red, in 265 of the 500, of which 535 looked like real checks. Then I read the strongest seven against their original YAML: three were artefacts of my own tool, three were engineers doing something deliberate and saying so in the same line, and **one** was genuine — and even that one has a hand-built safety net two steps later. 535 is an upper bound; the verified floor is one. The sample rates were deliberately not extrapolated back onto the 535, because that is the move that turns a measurement into a press release. The report leads with the two defects it found in the tool itself, including the one that made it judge nothing at all on Ubuntu — and with the fact that it is silent about 61.5% of what it saw.
+
 ### Sites that check themselves in public
 
 The tools above run in CI, where only I see them. These are the same idea, deployed — a claim held to the truth in front of whoever visits.
