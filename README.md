@@ -44,6 +44,10 @@ The tools above run in CI, where only I see them. These are the same idea, deplo
 
 **[tetris.kaipfister.de](https://tetris.kaipfister.de)** — Tetris in the browser, and an honest label on it. It used to say "the 1989 Nintendo rules: Super Rotation System, wall kicks, lock delay" — which cannot be, because the SRS is from *Tetris Worlds* in 2001 and the NES game had neither wall kicks nor lock delay. What it actually is: **modern Guideline Tetris with the 1989 gravity table and the 1989 scoring**, and it now says so itself. No install, no signup, no framework.
 
+### A claim you can check in your own room
+
+**[who-broadcasts-here](https://github.com/Wasserpuncher/who-broadcasts-here)** — Randomised MAC addresses were the industry's answer to passive tracking: rotate the address, and the shop's Wi-Fi cannot recognise you tomorrow. That is a claim about hardware you already own, and it is checkable in an afternoon. One ESP32, no sensors and no wiring, listens to what a room is already broadcasting — Wi-Fi frames on the router's channel, access points on every channel, Bluetooth LE advertisements — and puts one number in the header: how many of the devices around you still carry an address that never changes. Vendor names are not guessed; they come from the IEEE registry, filtered to 123 manufacturers and 13,403 prefixes by a script that ships alongside the table it generates, so the table can be rebuilt rather than trusted. The constraint that shapes the whole design is that the ESP32 has exactly one radio: channel hopping and a held association are mutually exclusive, so the sniffer parks on the channel where the interesting devices actually are instead of sweeping past them four times a second. **It has not been run on hardware yet — the boards are still in the post — and the README says so in a section of its own, next to the list of what was verified without a board and what was not.**
+
 ### Built from scratch
 
 These came first, and they are why the tools above exist: they are the repositories whose READMEs turned out to be lying. No frameworks and no dependencies — the standard library and the problem.
